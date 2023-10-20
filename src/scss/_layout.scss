@@ -1,0 +1,61 @@
+.alpaca-generator {
+	&__header {
+		text-align: center;
+		margin: 1.6rem 0;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__images {
+		position: relative;
+		max-width: 50rem;
+		height: 54rem;
+		width: 100%;
+	}
+
+	&__image {
+		position: absolute;
+		top: 46%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+
+		&--eyes,
+		&--hair,
+		&--mouth {
+			z-index: $level-one;
+		}
+
+		&--accessories {
+			z-index: $level-two;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		&-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem 0.8rem;
+		}
+	}
+
+	&__footer {
+		text-align: center;
+	}
+}

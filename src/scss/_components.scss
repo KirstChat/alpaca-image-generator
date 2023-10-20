@@ -1,0 +1,133 @@
+.alpaca-generator {
+	&__header {
+		&-title {
+			font-size: 4.8rem;
+		}
+
+		&-author {
+			font-size: 2rem;
+		}
+	}
+
+	&__images {
+		@include border;
+		background-color: $white;
+	}
+	
+	&__image {
+		border: $border;
+	}
+
+	&__buttons {
+		&-label {
+			font-size: 2.8rem;
+			margin-bottom: 1.6rem;
+		}
+	}
+
+	&__button {
+		@include border;
+		cursor: pointer;
+		background-color: $white;
+		color: $black;
+		font-family: inherit;
+		font-size: 2rem;
+		text-transform: capitalize;
+		padding: 1.2rem 1.6rem;
+
+		&:active {
+			box-shadow: 0 0 $black;
+			transform: translate(.4rem, .4rem);
+		}
+
+		&--background {
+			padding: 0;
+			height: 5.2rem;
+			width: 5.2rem;
+		}
+
+		&--blue {
+			&50 {
+				background-color: $blue50;
+			}
+
+			&60 {
+				background-color: $blue60;
+			}
+
+			&70 {
+				background-color: $blue70;
+			}
+		}
+
+		&--darkblue {
+			&30 {
+				background-color: $darkblue30;
+			}
+
+			&50 {
+				background-color: $darkblue50;
+			}
+
+			&70 {
+				background-color: $darkblue70;
+			}
+		}
+
+		&--green {
+			&50 {
+				background-color: $green50;
+			}
+
+			&60 {
+				background-color: $green60;
+			}
+
+			&70 {
+				background-color: $green70;
+			}
+		}
+
+		&--grey {
+			&40 {
+				background-color: $grey40;
+			}
+
+			&70 {
+				background-color: $grey70;
+			}
+
+			&80 {
+				background-color: $grey80;
+			}
+		}
+
+		&--red {
+			&50 {
+				background-color: $red50;
+			}
+
+			&60 {
+				background-color: $red60;
+			}
+
+			&70 {
+				background-color: $red70;
+			}
+		}
+
+		&--yellow {
+			&50 {
+				background-color: $yellow50;
+			}
+
+			&60 {
+				background-color: $yellow60;
+			}
+
+			&70 {
+				background-color: $yellow70;
+			}
+		}
+	}
+}
