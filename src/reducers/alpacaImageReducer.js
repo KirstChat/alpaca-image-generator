@@ -1,4 +1,5 @@
 import * as constants from '../helpers/constants';
+import * as functions from '../helpers/functions';
 
 export const alpacaImageReducer = (state, action) => {
 	switch (action.type) {
@@ -48,15 +49,14 @@ export const alpacaImageReducer = (state, action) => {
 				...constants.initialAlpacaImageState
 			}
 		case 'random':
-			// TODO: Move this to a single function
-			const randomAccessory = Math.floor(Math.random() * constants.accessories.length);
-			const randomBackground = Math.floor(Math.random() * constants.background.length);
-			const randomLeg = Math.floor(Math.random() * constants.leg.length);
-			const randomNeck = Math.floor(Math.random() * constants.neck.length);
-			const randomMouth = Math.floor(Math.random() * constants.mouth.length);
-			const randomEars = Math.floor(Math.random() * constants.ears.length);
-			const randomHair = Math.floor(Math.random() * constants.hair.length);
-			const randomEyes = Math.floor(Math.random() * constants.eyes.length);
+			const randomAccessory = functions.randomNumber(constants.accessories);
+			const randomBackground = functions.randomNumber(constants.background);
+			const randomLeg = functions.randomNumber(constants.leg);
+			const randomNeck = functions.randomNumber(constants.neck);
+			const randomMouth = functions.randomNumber(constants.mouth);
+			const randomEars = functions.randomNumber(constants.ears);
+			const randomHair = functions.randomNumber(constants.hair);
+			const randomEyes = functions.randomNumber(constants.eyes);
 			
 			return {
 				...state,
