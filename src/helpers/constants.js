@@ -1,17 +1,7 @@
+// Constants
 export const defaultBackground = 'blue50';
 
 export const defaultImage = 'default';
-
-export const initialStyleButtonsState = {
-    buttonType: 'accessories',
-    buttons: [
-        'earings',
-        'flower',
-        'glasses',
-        'headphones',
-        'none'
-    ]
-};
 
 export const initialAlpacaImageState = {
     accessories: '',
@@ -112,4 +102,3 @@ export const neck = [
     'bend-forward',
     'thick'
 ];
-
