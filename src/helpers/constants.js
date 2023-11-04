@@ -4,7 +4,13 @@ export const defaultImage = 'default';
 
 export const initialStyleButtonsState = {
     buttonType: 'accessories',
-    buttons: ['earings', 'flower', 'glasses', 'headphones', 'none']
+    buttons: [
+        'earings',
+        'flower',
+        'glasses',
+        'headphones',
+        'none'
+    ]
 };
 
 export const initialAlpacaImageState = {
@@ -18,14 +24,23 @@ export const initialAlpacaImageState = {
     eyes: defaultImage
 };
 
-export const accessoriseButtons = ['accessories', 'background', 'ears', 'eyes', 'hair', 'leg', 'mouth', 'neck'];
+export const accessoriseButtons = [
+    'accessories',
+    'background',
+    'ears',
+    'eyes',
+    'hair',
+    'leg',
+    'mouth',
+    'neck'
+];
 
 export const accessories = [
+    'none',
     'earings',
     'flower',
     'glasses',
-    'headphones',
-    'none'
+    'headphones'
 ];
 
 export const background = [
@@ -56,8 +71,8 @@ export const ears = [
 ];
 
 export const eyes = [
-    'angry',
     'default',
+    'angry',
     'naughty',
     'panda',
     'smart',
@@ -65,9 +80,9 @@ export const eyes = [
 ];
 
 export const hair = [
+    'default',
     'bang',
     'curls',
-    'default',
     'elegant',
     'fancy',
     'quiff',
@@ -75,26 +90,26 @@ export const hair = [
 ];
 
 export const leg = [
+    'default',
     'bubble-tea',
     'cookie',
-    'default',
     'game-console',
     'tilt-backward',
     'tilt-forward'
 ];
 
 export const mouth = [
-    'astonished',
     'default',
+    'astonished',
     'eating',
     'laugh',
     'tongue'
 ];
 
 export const neck = [
+    'default',
     'bend-backward',
     'bend-forward',
-    'default',
     'thick'
 ];
 

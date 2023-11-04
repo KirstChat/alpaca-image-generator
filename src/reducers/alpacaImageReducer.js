@@ -5,54 +5,47 @@ export const alpacaImageReducer = (state, action) => {
 		case 'accessories':
 			return {
 				...state,
-				accessories: action.button === 'none' ? '' : action.button
+				accessories: action.selectItem === 'none' ? '' : action.selectItem
 			};
 		case 'background':
 			return {
 				...state,
-				background: action.button
+				background: action.selectItem
 			};
 		case 'ears':
 			return {
 				...state,
-				ears: action.button
+				ears: action.selectItem
 			};
 		case 'eyes':
 			return {
 				...state,
-				eyes: action.button
+				eyes: action.selectItem
 			};
 		case 'hair':
 			return {
 				...state,
-				hair: action.button
+				hair: action.selectItem
 			};
 		case 'leg':
 			return {
 				...state,
-				leg: action.button
+				leg: action.selectItem
 			};
 		case 'mouth':
 			return {
 				...state,
-				mouth: action.button
+				mouth: action.selectItem
 			};
 		case 'neck':
 			return {
 				...state,
-				neck: action.button
+				neck: action.selectItem
 			};
 		case 'reset':
 			return {
 				...state,
-				accessories: '',
-				background: constants.defaultBackground,
-				leg: constants.defaultImage,
-				neck: constants.defaultImage,
-				mouth: constants.defaultImage,
-				ears: constants.defaultImage,
-				hair: constants.defaultImage,
-				eyes: constants.defaultImage
+				...constants.initialAlpacaImageState
 			}
 		case 'random':
 			// TODO: Move this to a single function
