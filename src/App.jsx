@@ -1,91 +1,72 @@
 import { Fragment, useReducer } from 'react';
-import { styleButtonsReducer } from './reducers/styleButtonsReducer';
 import { alpacaImageReducer } from './reducers/alpacaImageReducer';
 import * as constants from './helpers/constants';
 import AlpacaImage from './components/AlpacaImage';
-import Buttons from './components/Buttons';
-import ButtonPanel from './components/ButtonPanel';
+import Select from './components/Select';
 import './scss/main.scss';
 
 const App = () => {
-	// TODO: Move this into constants
-	// Style Buttons
-	const initialStyleButtonsState = {
-		buttonType: 'accessories',
-		buttons: ['earings', 'flower', 'glasses', 'headphones', 'none']
-	};
-	const [styleButtons, styleButtonsDispatch] = useReducer(styleButtonsReducer, initialStyleButtonsState);
+    const [alpacaImage, alpacaImageDispatch] = useReducer(
+        alpacaImageReducer,
+        constants.initialAlpacaImageState
+    );
 
-	// TODO: Move this into constants
-	// Alpaca Image
-	const initialAlpacaImageState = {
-		accessories: '',
-		background: constants.defaultBackground,
-		leg: constants.defaultImage,
-		neck: constants.defaultImage,
-		mouth: constants.defaultImage,
-		ears: constants.defaultImage,
-		hair: constants.defaultImage,
-		eyes: constants.defaultImage
-	};
-	const [alpacaImage, alpacaImageDispatch] = useReducer(alpacaImageReducer, initialAlpacaImageState);
+    // Style Button Handler
+    const styleHandler = (e) => {
+        const category = e.target.getAttribute('data-category');
+        const selectItem = e.target.getAttribute('data-select-item');
 
-	// Accessorise Button Handler
-	const accessoriseHandler = e => {
-		const buttonType = e.target.getAttribute(['data-button']);
+        alpacaImageDispatch({ type: `${category}`, selectItem });
+    };
 
-		styleButtonsDispatch({ type: `${buttonType}` });
-	};
+    // Download Button Handler
+    const downloadHandler = () => {
+        console.log('Downloading...');
+    };
 
-	// Style Button Handler
-	const styleHandler = e => {
-		const buttonType = e.target.getAttribute('data-button-type');
-		const button = e.target.getAttribute('data-button');
+    // Randomise Button Handler
+    const randomiseHandler = () => {
+        alpacaImageDispatch({ type: 'random' });
+    };
 
-		alpacaImageDispatch({ type: `${buttonType}`, button });
-	};
+    // Reset Button Handler
+    const resetHandler = () => {
+        alpacaImageDispatch({ type: 'reset' });
+    };
 
-	// Download Button Handler
-	const downloadHandler = e => {
-		console.log('Downloading...');
-	};
+    return (
+        <Fragment>
+            <section className='alpaca-generator__container'>
+                <AlpacaImage alpacaImage={alpacaImage} />
 
-	// Randomise Button Handler
-	const randomiseHandler = () => {
-		alpacaImageDispatch({ type: 'random' });
-	};
+                <Select
+                    categories={constants.accessoriseButtons}
+                    clickHandler={styleHandler}
+                />
+            </section>
 
-	// Reset Button Handler
-	const resetHandler = () => {
-		alpacaImageDispatch({ type: 'reset' });
-	};
-
-	return (
-		<Fragment>
-			<section className='alpaca-generator__container'>
-				<AlpacaImage alpacaImage={alpacaImage} />
-
-				<Buttons
-					buttons={constants.accessoriseButtons}
-					type='accessorise'
-					onClick={accessoriseHandler}
-				/>
-
-				<ButtonPanel
-					buttons={styleButtons.buttons}
-					buttonType={styleButtons.buttonType}
-					type='style'
-					onClick={styleHandler}
-				/>
-			</section>
-
-			<section className='alpaca-generator__additional-buttons'>
-				<button className='alpaca-generator__button' onClick={downloadHandler}>⬇️ Download</button>
-				<button className='alpaca-generator__button' onClick={randomiseHandler}>🔀 Randomise</button>
-				<button className='alpaca-generator__button' onClick={resetHandler}>⏮️ Reset</button>
-			</section>
-		</Fragment>
-	);
+            <section className='alpaca-generator__additional-buttons'>
+                <button
+                    className='alpaca-generator__button'
+                    onClick={downloadHandler}
+                >
+                    ⬇️ Download
+                </button>
+                <button
+                    className='alpaca-generator__button'
+                    onClick={randomiseHandler}
+                >
+                    🔀 Randomise
+                </button>
+                <button
+                    className='alpaca-generator__button'
+                    onClick={resetHandler}
+                >
+                    ⏮️ Reset
+                </button>
+            </section>
+        </Fragment>
+    );
 };
 
 export default App;
