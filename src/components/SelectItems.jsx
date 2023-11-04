@@ -1,5 +1,6 @@
-import * as Ariakit from '@ariakit/react';
 import { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import * as Ariakit from '@ariakit/react';
 
 const SelectItems = ({ category, clickHandler, index, selectItems }) => {
     return (
@@ -19,6 +20,13 @@ const SelectItems = ({ category, clickHandler, index, selectItems }) => {
             ))}
         </Fragment>
     );
+};
+
+SelectItems.propTypes = {
+    category: PropTypes.string,
+    clickHandler: PropTypes.func,
+    index: PropTypes.number,
+    selectItems: PropTypes.array,
 };
 
 export default SelectItems;

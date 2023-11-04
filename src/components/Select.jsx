@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
+import PropTypes from 'prop-types';
+import SelectItems from './SelectItems';
 import * as Ariakit from '@ariakit/react';
 import * as constants from '../helpers/constants';
-import SelectItems from './SelectItems';
 
 const Select = ({ categories, clickHandler }) => {
     const selectItems = useMemo(() => {
@@ -11,7 +12,7 @@ const Select = ({ categories, clickHandler }) => {
             items.push(constants[category]);
         });
         return items;
-    });
+    }, [categories]);
 
     return (
         <div className='alpaca-generator__select'>
@@ -43,6 +44,11 @@ const Select = ({ categories, clickHandler }) => {
             ))}
         </div>
     );
+};
+
+Select.propTypes = {
+    categories: PropTypes.array,
+    clickHandler: PropTypes.func,
 };
 
 export default Select;
