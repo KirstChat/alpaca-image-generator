@@ -4,15 +4,28 @@ export const defaultBackground = 'blue50';
 export const defaultImage = 'default';
 
 export const initialAlpacaImageState = {
-    accessories: '',
+    accessories: 'none',
     background: defaultBackground,
     leg: defaultImage,
     neck: defaultImage,
     mouth: defaultImage,
     ears: defaultImage,
     hair: defaultImage,
-    eyes: defaultImage
+    eyes: defaultImage,
+    nose: 'nose'
 };
+
+export const imageOrder = [
+    'background',
+    'neck',
+    'leg',
+    'ears',
+    'hair',
+    'eyes',
+    'nose',
+    'mouth',
+    'accessories'
+];
 
 export const accessoriseButtons = [
     'accessories',
@@ -102,3 +115,24 @@ export const neck = [
     'bend-forward',
     'thick'
 ];
+
+export const colours = {
+    blue50: '#5696f6',
+    blue60: '#2b7bf4',
+    blue70: '#2a5ca7',
+    darkblue30: '#7a8faf',
+    darkblue50: '#012966',
+    darkblue70: '#01193d',
+    green50: '#9fd966',
+    green60: '#74bd28',
+    green70: '#6a9440',
+    grey40: '#ccc',
+    grey70: '#666',
+    grey80: '#333',
+    red50: '#e85e22',
+    red60: '#cb4b15',
+    red70: '#9f370b',
+    yellow50: '#fbd43f',
+    yellow60: '#e7b60d',
+    yellow70: '#ce8e0e'
+};

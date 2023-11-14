@@ -6,7 +6,7 @@ export const alpacaImageReducer = (state, action) => {
 		case 'accessories':
 			return {
 				...state,
-				accessories: action.selectItem === 'none' ? '' : action.selectItem
+				accessories: action.selectItem
 			};
 		case 'background':
 			return {
@@ -47,28 +47,21 @@ export const alpacaImageReducer = (state, action) => {
 			return {
 				...state,
 				...constants.initialAlpacaImageState
-			}
+			};
 		case 'random':
-			const randomAccessory = functions.randomNumber(constants.accessories);
-			const randomBackground = functions.randomNumber(constants.background);
-			const randomLeg = functions.randomNumber(constants.leg);
-			const randomNeck = functions.randomNumber(constants.neck);
-			const randomMouth = functions.randomNumber(constants.mouth);
-			const randomEars = functions.randomNumber(constants.ears);
-			const randomHair = functions.randomNumber(constants.hair);
-			const randomEyes = functions.randomNumber(constants.eyes);
 			
 			return {
 				...state,
-				accessories: constants.accessories[randomAccessory] === 'none' ? '' : constants.accessories[randomAccessory],
-				background: constants.background[randomBackground],
-				leg: constants.leg[randomLeg],
-				neck: constants.neck[randomNeck],
-				mouth: constants.mouth[randomMouth],
-				ears: constants.ears[randomEars],
-				hair: constants.hair[randomHair],
-				eyes: constants.eyes[randomEyes]
+				accessories: constants.accessories[functions.randomNumber(constants.accessories)],
+				background: constants.background[functions.randomNumber(constants.background)],
+				ears: constants.ears[functions.randomNumber(constants.ears)],
+				eyes: constants.eyes[functions.randomNumber(constants.eyes)],
+				hair: constants.hair[functions.randomNumber(constants.hair)],
+				leg: constants.leg[functions.randomNumber(constants.leg)],
+				mouth: constants.mouth[functions.randomNumber(constants.mouth)],
+				neck: constants.neck[functions.randomNumber(constants.neck)]
 			}
+		
 		default:
 			throw Error(`Unknown action: ${action.type}`);
 	}
