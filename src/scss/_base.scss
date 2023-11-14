@@ -17,13 +17,98 @@ $red70: #9f370b;
 $yellow50: #fbd43f;
 $yellow60: #e7b60d;
 $yellow70: #ce8e0e;
-$black: #000;
+$black: #101010;
 $white: #fff;
+
+/* Colour Classes */
+.blue {
+	&50 {
+		background-color: $blue50;
+	}
+
+	&60 {
+		background-color: $blue60;
+	}
+
+	&70 {
+		background-color: $blue70;
+	}
+}
+
+.darkblue {
+	&30 {
+		background-color: $darkblue30;
+	}
+
+	&50 {
+		background-color: $darkblue50;
+	}
+
+	&70 {
+		background-color: $darkblue70;
+	}
+}
+
+.green {
+	&50 {
+		background-color: $green50;
+	}
+
+	&60 {
+		background-color: $green60;
+	}
+
+	&70 {
+		background-color: $green70;
+	}
+}
+
+.grey {
+	&40 {
+		background-color: $grey40;
+	}
+
+	&70 {
+		background-color: $grey70;
+	}
+
+	&80 {
+		background-color: $grey80;
+	}
+}
+
+.red {
+	&50 {
+		background-color: $red50;
+	}
+
+	&60 {
+		background-color: $red60;
+	}
+
+	&70 {
+		background-color: $red70;
+	}
+}
+
+.yellow {
+	&50 {
+		background-color: $yellow50;
+	}
+
+	&60 {
+		background-color: $yellow60;
+	}
+
+	&70 {
+		background-color: $yellow70;
+	}
+}
 
 /* Utilities */
 $border: .4rem solid $black;
-$border-radius: .4rem;
-$box-shadow: .4rem .4rem 0 black;
+$border-radius: .2rem;
+$box-shadow: .4rem .4rem 0 $black;
 
 /* Font Weight */
 $light: 300;

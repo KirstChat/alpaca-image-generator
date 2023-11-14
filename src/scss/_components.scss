@@ -9,125 +9,69 @@
 		}
 	}
 
-	&__images {
-		@include border;
-		background-color: $white;
-	}
+	&__select {
+		&-category {
+			font-size: 2rem;
+			margin-bottom: 0.8rem;
+		}
+
+		&-button {
+			cursor: pointer;
+			border: none;
+			border-radius: 0.4rem;
+			padding: 0.8rem;
+			position: relative;
+			text-transform: uppercase;
+			overflow: hidden;
+
+			span {
+				background-color: $white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				right: 0;
+				height: 100% !important;
+				width: 3rem !important;
+			}
 	
-	&__image {
-		border: $border;
-	}
-
-	&__buttons {
-		&-label {
-			font-size: 2.8rem;
-			margin-bottom: 1.6rem;
-		}
-	}
-
-	&__button {
-		@include border;
-		cursor: pointer;
-		background-color: $white;
-		color: $black;
-		font-family: inherit;
-		font-size: 2rem;
-		text-transform: capitalize;
-		padding: 1.2rem 1.6rem;
-
-		&:active {
-			box-shadow: 0 0 $black;
-			transform: translate(.4rem, .4rem);
-		}
-
-		&--background {
-			padding: 0;
-			height: 5.2rem;
-			width: 5.2rem;
-		}
-
-		&--blue {
-			&50 {
+			&--background {
 				background-color: $blue50;
-			}
+				color: transparent;
 
-			&60 {
-				background-color: $blue60;
-			}
-
-			&70 {
-				background-color: $blue70;
+				svg {
+					stroke: $black;
+				}
 			}
 		}
 
-		&--darkblue {
-			&30 {
-				background-color: $darkblue30;
-			}
+		&-popover {
+			background-color: $white;
+			border-radius: .4rem;
+			margin-top: .2rem;
+			overflow: hidden;
 
-			&50 {
-				background-color: $darkblue50;
-			}
-
-			&70 {
-				background-color: $darkblue70;
+			&--background {
+				border-radius: .4rem;
+				display: flex;
+				flex-wrap: wrap;
 			}
 		}
 
-		&--green {
-			&50 {
-				background-color: $green50;
-			}
+		&-item {
+			cursor: pointer;
+			padding: .8rem; 
 
-			&60 {
-				background-color: $green60;
-			}
-
-			&70 {
-				background-color: $green70;
+			&--background {
+				color: transparent;
+				flex: 1;
+				height: 4.5rem;
+				width: 4.5rem;
 			}
 		}
 
-		&--grey {
-			&40 {
-				background-color: $grey40;
-			}
-
-			&70 {
-				background-color: $grey70;
-			}
-
-			&80 {
-				background-color: $grey80;
-			}
-		}
-
-		&--red {
-			&50 {
-				background-color: $red50;
-			}
-
-			&60 {
-				background-color: $red60;
-			}
-
-			&70 {
-				background-color: $red70;
-			}
-		}
-
-		&--yellow {
-			&50 {
-				background-color: $yellow50;
-			}
-
-			&60 {
-				background-color: $yellow60;
-			}
-
-			&70 {
-				background-color: $yellow70;
-			}
+		&-item[data-active-item] {
+			background-color: hsl(204 100% 40%);
 		}
 	}
 }
