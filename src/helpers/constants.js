@@ -21,8 +21,8 @@ export const imageOrder = [
     'leg',
     'ears',
     'hair',
-    'eyes',
     'nose',
+    'eyes',
     'mouth',
     'accessories'
 ];
