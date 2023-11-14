@@ -4,13 +4,14 @@ import SelectItems from './SelectItems';
 import * as Ariakit from '@ariakit/react';
 import * as constants from '../helpers/constants';
 
-const Select = ({ categories, clickHandler }) => {
+const Select = ({ categories, clickHandler, randomImage }) => {
     const selectItems = useMemo(() => {
         let items = [];
 
         categories.forEach((category) => {
             items.push(constants[category]);
         });
+
         return items;
     }, [categories]);
 
@@ -20,13 +21,18 @@ const Select = ({ categories, clickHandler }) => {
                 <Ariakit.SelectProvider
                     defaultValue={selectItems[index][0]}
                     key={index}
+                    value={randomImage[category]}
                 >
                     <div className='alpaca-generator__select-container'>
                         <Ariakit.SelectLabel className='alpaca-generator__select-category'>
                             {category}
                         </Ariakit.SelectLabel>
 
-                        <Ariakit.Select className='alpaca-generator__select-button' />
+                        <Ariakit.Select
+                            className={`alpaca-generator__select-button alpaca-generator__select-button--${category} ${
+                                category === 'background' && 'js-select-button'
+                            }`}
+                        />
 
                         <Ariakit.SelectPopover
                             sameWidth

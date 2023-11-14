@@ -8,8 +8,9 @@ const SelectItems = ({ category, clickHandler, index, selectItems }) => {
             {selectItems[index].map((item, index) => (
                 <Ariakit.SelectItem
                     className={`alpaca-generator__select-item alpaca-generator__select-item--${item} ${
-                        category === 'background' &&
-                        `alpaca-generator__select-item--background`
+                        category === 'background'
+                            ? `alpaca-generator__select-item--background ${item}`
+                            : ''
                     }`}
                     key={index}
                     value={item}
